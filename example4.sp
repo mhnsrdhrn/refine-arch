@@ -1,4 +1,4 @@
-#const numSteps = 3.
+#const numSteps = 4.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   sorts
@@ -100,7 +100,7 @@ val(loc(O, L), true, I) :- val(loc(R, L), true, I), val(in_hand(R, O), true, I).
 -occurs(grasp(R, O), I) :- val(in_hand(R, O), true, I).
 
 %% You can put down an object only if it is in your hand
--occurs(putdown(R, O), I) :-  not val(in_hand(R, O), true, I).
+-occurs(putdown(R, O), I) :-  -val(in_hand(R, O), true, I).
 
 
 
@@ -199,7 +199,7 @@ something_happened(I) :- occurs(A, I).
    not something_happened(I).
 
 
-goal(I) :- val(loc(text0, office), true, I).
+goal(I) :- val(loc(text0, office), true, I), -val(in_hand(rob0, text0), true, I).
 
 
 
