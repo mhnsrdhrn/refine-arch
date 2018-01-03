@@ -119,8 +119,6 @@ val(F, Y, 0) :- obs(F, Y, 0).
 %% Only one value possible for a fluent; not really necessary...
 -val(F, V2, I) :- val(F, V1, I), V1!=V2.
 
-%-obs(F, V2, I) :- obs(F, V1, I), V1!=V2.
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Tests
